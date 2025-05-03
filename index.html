@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egypt's A7lam City | Smart City of the Future</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== Modern CSS Variables ===== */
+        :root {
+            --primary: #037203de;
+            --primary-dark: hsla(120, 84%, 23%, 0.822);
+            --secondary: hsl(110, 100%, 15%);
+            --accent: hsl(22, 100%, 63%);
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: hwb(0 0% 86%);
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* ===== Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background: #ff8c1a;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* ===== Header with Hero Section ===== */
+        header {
+            background: linear-gradient(135deg, rgba(46, 136, 131, 0.452), rgba(55, 207, 118, 0.26)), 
+                        url('https://i.pinimg.com/originals/a8/1d/e3/a81de3c3bfa8b6e8951d5d31f1f63aa4.gif');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .logo {
+            width: 300px;
+            height: 300px;
+            margin-bottom: 1.5rem;
+            animation: alternate 1s
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .header-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* ===== Navigation ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+          background: hsla(115, 84%, 23%, 0.822);
+          padding: 1rem 0;
+          box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: hsl(0, 0%, 0%);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===== About Section ===== */
+        #about {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .about-img img {
+            transition: var(--transition);
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-features {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        /* ===== Services Section ===== */
+        #services {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-content ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .service-content li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .service-content li:before {
+            content: '✓';
+            color: var(--secondary);
+            position: absolute;
+            left: -1.5rem;
+        }
+
+        /* ===== Smart Systems Section ===== */
+        #smart-systems {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .systems-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 3rem;
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .systems-table th, 
+        .systems-table td {
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+        }
+
+        .systems-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+
+        .systems-table tr:nth-child(even) {
+            background: white(0, 100%, 99%, 0.051);
+        }
+
+        .systems-table tr:hover {
+            background: lab(100% 0.01 -0.01);
+        }
+
+        /* ===== Gallery Section ===== */
+        #gallery {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            aspect-ratio: 1/1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, #ffffff, transparent);
+            color: white;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* ===== Contact Section ===== */
+        #contact {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-about p {
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links h3, 
+        .footer-contact h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3:after,
+        .footer-contact h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* ===== Animations ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-img {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--primary-dark);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1000;
+            }
+
+            .header-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#logo" class="Reflecotion of you.png">A7lam City</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#smart-systems">Smart Systems</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header id="home">
+        <div class="container header-content">
+            <img src="Reflecotion_of_you__3_-removebg-preview.png" class="logo">
+            <h1>Egypt's A7lam City</h1>
+            <p class="tagline">A Visionary Smart City for Sustainable Urban Living</p>
+            <div class="header-btns">
+                <a href="#about" class="btn">Explore More</a>
+                <a href="#contact" class="btn btn-accent">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About A7lam City</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>A7lam City is Egypt's most ambitious urban development project, designed to become the country's new political and financial hub. Located approximately 45 kilometers east of Cairo, this smart city represents a bold leap into the future of urban living.</p>
+                    <p>With construction beginning in 2015, the city spans over 700 square kilometers in its first phase and is designed to eventually accommodate 6.5 million residents. The project represents a $58 billion investment in Egypt's future.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Strategic Location</h4>
+                                <p>Between Cairo and Suez, near major transportation routes</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h4>Sustainable Design</h4>
+                                <p>35% green spaces and eco-friendly infrastructure</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <div>
+                                <h4>Smart Technology</h4>
+                                <p>City-wide IoT network and digital services</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div>
+                                <h4>Modern Architecture</h4>
+                                <p>Iconic skyline with Africa's tallest building</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-img">
+                    <img src="https://i.pinimg.com/originals/ee/9d/3e/ee9d3e5e0d98d65749e52cf44ee06c4d.gif" alt="A7lam City View">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Discover the comprehensive services designed for modern urban living</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1571624436279-b272aff752b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Transportation">
+                    </div>
+                    <div class="service-content">
+                        <h3>Smart Transportation</h3>
+                        <p>Advanced mobility solutions for seamless city navigation</p>
+                        <ul>
+                            <li>Electric bus rapid transit system</li>
+                            <li>Monorail connecting to Greater Cairo</li>
+                            <li>Smart traffic management with AI</li>
+                            <li>Extensive bicycle lanes network</li>
+                            <li>Autonomous vehicle testing zones</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Education">
+                    </div>
+                    <div class="service-content">
+                        <h3>Education & Research</h3>
+                        <p>World-class educational institutions and research facilities</p>
+                        <ul>
+                            <li>A7lam City International University</li>
+                            <li>STEM-focused schools and academies</li>
+                            <li>Innovation hubs and tech incubators</li>
+                            <li>Central Library of Egypt</li>
+                            <li>Specialized vocational training centers</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Green Spaces">
+                    </div>
+                    <div class="service-content">
+                        <h3>Green Spaces & Recreation</h3>
+                        <p>Extensive parks and leisure facilities for all residents</p>
+                        <ul>
+                            <li>Central Park (twice the size of New York's)</li>
+                            <li>Green River (35km linear park)</li>
+                            <li>Sports City Complex</li>
+                            <li>Rooftop gardens on major buildings</li>
+                            <li>Urban farming districts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Systems Section -->
+    <section id="smart-systems" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Smart City Systems</h2>
+                <p>Cutting-edge technology powering the city of the future</p>
+            </div>
+            
+            <table class="systems-table">
+                <thead>
+                    <tr>
+                        <th>System</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fiber Optic Network</td>
+                        <td>City-wide 10Gbps internet infrastructure with free WiFi in public areas</td>
+                        <td><span class="status-active">Operational</span></td>
+                    </tr>
+                    <tr>
+                        <td>Smart Utilities</td>
+                        <td>AI-powered water and electricity management with real-time monitoring</td>
+                        <td><span class="status-active">Phase 1 Operational</span></td>
+                    </tr>
+                    <tr>
+                        <td>Digital Government</td>
+                        <td>Paperless administration services with blockchain verification</td>
+                        <td><span class="status-development">In Development</span></td>
+                    </tr>
+                    <tr>
+                        <td>Autonomous Vehicles</td>
+                        <td>Self-driving shuttles for last-mile transport with dedicated lanes</td>
+                        <td><span class="status-testing">Testing Phase</span></td>
+                    </tr>
+                    <tr>
+                        <td>Smart Booking System</td>
+                        <td>Integrated platform for reserving public services and facilities</td>
+                        <td><span class="status-active">Operational</span></td>
+                    </tr>
+                    <tr>
+                        <td>Traffic Management</td>
+                        <td>AI-powered vehicle counting and adaptive signal control</td>
+                        <td><span class="status-active">Operational</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>City Gallery</h2>
+                <p>Explore the beauty and innovation of our smart city</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/46/86/b1/4686b18fc478ecabc0c23e0d4384f7d2.jpg" alt="Iconic tower">
+                    <div class="gallery-overlay">
+                        <h4></h4>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/f4/e4/45/f4e44574128a8e04f2b0cca411111266.jpg" alt="Octagon">
+                    <div class="gallery-overlay">
+                        <h4></h4>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/cb/fe/82/cbfe82a4fb20ff1dc1ba9d013af9d79a.jpg" alt="The grand mosque">
+                    <div class="gallery-overlay">
+                        <h4></h4>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/8d/b0/6d/8db06d2f5df3f0fe5baea0fde78a92ab.jpg" alt="Parliament building">
+                    <div class="gallery-overlay">
+                        <h4></h4>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/8d/b0/6d/8db06d2f5df3f0fe5baea0fde78a92ab.jpg" alt="Arts and Culture Building">
+                    <div class="gallery-overlay">
+                        <h4></h4>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/e8/d5/07/e8d5077ddb8c30126947c98724b14467.jpg" alt="Cathedral of the Nativity of Christ">
+                    <div class="gallery-overlay">
+                        <h4</h4>
+                        <p></p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/06/b4/cf/06b4cf4f5090c6858202f01bca5b9439.jpg" alt="Museum of the Capitals of Egypt">
+                        <div class="gallery-overlay">
+                            <h4></h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch for more information or investment opportunities</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Our Offices</h3>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Headquarters</h4>
+                            <p>Government District, A7lam City, Egypt</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@a7lamcity.gov.eg</p>
+                            <p>investments@a7lamcity.gov.eg</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+20 123 456 7890</p>
+                            <p>+20 987 654 3210</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Sunday - Thursday: 8:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem;">
+                        <a href="https://deci.almentor.net/pages/103/level-2-home" class="btn btn-accent" target="_blank">
+                            Learn more about DECI Initiative
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">password</label>
+                            <input type="password" id="password" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">A7lam City®</div>
+                    <p>Egypt's visionary smart city project, setting new standards for urban development in Africa and the Middle East.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About the Project</a></li>
+                        <li><a href="#services">City Services</a></li>
+                        <li><a href="#smart-systems">Smart Systems</a></li>
+                        <li><a href="#gallery">Photo Gallery</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Residential Areas</a></li>
+                        <li><a href="#">Business Districts</a></li>
+                        <li><a href="#">Transportation</a></li>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Healthcare</a></li>
+                        <li><a href="#">Recreation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Government District, A7lam City, Egypt</p>
+                    <p><i class="fas fa-envelope"></i> info@a7lamcity.gov.eg</p>
+                    <p><i class="fas fa-phone-alt"></i> +20 123 456 7890</p>
+                    <p><i class="fas fa-clock"></i> Sun-Thu: 8:00 AM - 4:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 A7lam City Development Authority. All rights reserved.</p>
+                <P> powered by <b>yousef™😎</b> </P>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                document.querySelector('nav').classList.add('scrolled');
+            } else {
+                document.querySelector('nav').classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (this.getAttribute('href') === '#') return;
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+        
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will contact you soon.');
+                this.reset();
+            });
+        }
+        
+        // Animation on Scroll
+        const animateOnScroll = () => {
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight - 100) {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animations
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
